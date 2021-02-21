@@ -2,7 +2,7 @@ import 'package:timezone/timezone.dart';
 
 // ignore_for_file: public_member_api_docs
 extension TZDateTimeMapper on TZDateTime {
-  Map<String, Object> toMap() {
+  Map<String, Object?> toMap() {
     String twoDigits(int n) {
       if (n >= 10) {
         return '$n';
@@ -21,7 +21,7 @@ extension TZDateTimeMapper on TZDateTime {
         .replaceAll(iso8601OffsetComponent, '')
         .replaceAll('Z', '');
 
-    return <String, Object>{
+    return <String, Object?>{
       'timeZoneName': location.name,
       'scheduledDateTime': iso8601DateComponent,
     };
